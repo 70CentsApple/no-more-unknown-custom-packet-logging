@@ -1,7 +1,6 @@
 apply plugin: 'maven-publish'
 apply plugin: 'fabric-loom'
 apply plugin: 'com.replaymod.preprocess'
-apply plugin: 'me.fallenbreath.yamlang'
 
 int mcVersion = project.mcVersion
 
@@ -25,15 +24,6 @@ dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-
-    // Fabric API. This is technically optional, but you probably want it anyway.
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-
-    // https://linkie.shedaniel.dev/dependencies
-    modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
-        exclude(group: "net.fabricmc.fabric-api")
-    }
-    modApi "com.terraformersmc:modmenu:${project.mod_menu_version}"
 }
 
 loom {
@@ -94,7 +84,7 @@ processResources {
         expand valueMap
     }
     // replaces `{{COMPATIBILITY_LEVEL}}`
-    filesMatching('template_mod.mixins.json') {
+    filesMatching('no_more_unknown_custom_packet_logging.mixins.json') {
         filter { s -> s.replace('{{COMPATIBILITY_LEVEL}}', "JAVA_${JAVA_COMPATIBILITY.ordinal() + 1}") }
     }
     // replaces `{{FABRIC_API}}` and `{{CLOTH_CONFIG}}`
@@ -104,11 +94,6 @@ processResources {
     }
 }
 
-// https://github.com/Fallen-Breath/yamlang
-yamlang {
-    targetSourceSets = [sourceSets.main]
-    inputDir = 'assets/templatemod/lang'
-}
 
 // ensure that the encoding is set to UTF-8, no matter what the system default is
 // this fixes some edge cases with special characters not displaying correctly

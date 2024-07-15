@@ -1,11 +1,1 @@
-Template Mod for 70CentsApple's Mods
-
-replace:
-```plaintext
-Template Mod
-TemplateMod
-template_mod
-templatemod
-[CHANGE_ME]
-示例模组 // as default zh_cn translation
-```
+A Minecraft Fabric mod for 1.20.x and 1.21, to disable the spamming logging of Unknown Custom Packet.

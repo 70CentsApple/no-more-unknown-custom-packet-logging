@@ -3,16 +3,15 @@
   "id": "${id}",
   "version": "${version}",
 
-  "name": "Template Mod",
-  "description": "Template Mod [CHANGE_ME]",
+  "name": "No More Unknown Custom Packet Logging",
+  "description": "Disable the logging of Unknown Custom Packet",
   "authors": [
     "70CentsApple"
   ],
   "contact": {
-    "homepage": "https://modrinth.com/mod/[CHANGE_ME]",
-    "sources": "https://github.com/70CentsApple/[CHANGE_ME]",
-    "issues": "https://github.com/70CentsApple/[CHANGE_ME]/issues",
-    "bilibili": "https://space.bilibili.com/442361724"
+    "homepage": "https://github.com/70CentsApple/no-more-unknown-custom-packet-logging",
+    "sources": "https://github.com/70CentsApple/no-more-unknown-custom-packet-logging",
+    "issues": "https://github.com/70CentsApple/no-more-unknown-custom-packet-logging/issues"
   },
 
   "license": "GPL-3.0",
@@ -21,29 +20,13 @@
   "environment": "client",
   "entrypoints": {
     "main": [
-      "net.apple70cents.templatemod.TemplateMod"
-    ],
-    "modmenu": [
-      "net.apple70cents.templatemod.config.ModMenuScreen"
+      "net.apple70cents.no_more_unknown_custom_packet_logging.NoMoreUnknownCustomPacketLogging"
     ]
   },
   "mixins": [
-    "template_mod.mixins.json"
+    "no_more_unknown_custom_packet_logging.mixins.json"
   ],
-
   "depends": {
-    "fabricloader": ">=0.11.4",
-    "{{FABRIC_API}}": "*",
-    "{{CLOTH_CONFIG}}": "*"
-  },
-  "suggests": {
-    "modmenu": "*"
-  },
-  "custom": {
-    "modmenu": {
-      "links": {
-        "modmenu.modrinth": "https://modrinth.com/mod/[CHANGE_ME]"
-      }
-    }
+    "fabricloader": ">=0.11.4"
   }
 }

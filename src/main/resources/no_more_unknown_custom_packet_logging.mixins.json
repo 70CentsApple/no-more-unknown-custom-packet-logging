@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.apple70cents.no_more_unknown_custom_packet_logging.mixins",
+  "compatibilityLevel": "{{COMPATIBILITY_LEVEL}}",
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "MixinClientConfigurationNetworkHandler",
+    "MixinClientPlayNetworkHandler"
+  ]
+}
